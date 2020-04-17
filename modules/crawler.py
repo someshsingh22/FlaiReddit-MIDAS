@@ -8,19 +8,13 @@ from tqdm import tqdm_notebook #tqdm range to gauge progress
 import matplotlib.pyplot as plt #for analytics
 import seaborn as sns
 import pandas as pd #convert extracted data to csv
-
 #Create and configure logger 
-logging.basicConfig(filename="crawler.log", 
-                    format='%(asctime)s %(message)s', 
-                    filemode='w',
-                    level=logging.DEBUG)
 
 class Crawler:
   def __init__(self, size=250, start=time.time(), difference=7, sleep=1):
     
     #Data Collected by the crawler
     self.data={
-        'Author' : [],
         'Title'  : [],
         'Flair'  : [],
         'Text'   : [],
@@ -29,10 +23,10 @@ class Crawler:
     self.stats=[] #Number of posts collected on every leap of time
     self.sleep, self.size, self.start, self.difference = sleep, size, start, difference #Init the parameters
     self.__validate__() #Validate Parmaeters and log warnings
-    self.difference=self.difference*24*3600 #set difference to day format
+    self.difference=self.difference*3600 #set difference to day format
     self.current=self.start #set timer for query to time of init
     self.url_generator=self._url_generator() #create a url generator
-    self.url = 'https://api.pushshift.io/reddit/search/submission/?subreddit=india&size={}&{}' #url format for pushlift
+    self.url = 'https://api.pushshift.io/reddit/search/submission/?subreddit=india&size={}&{}&fields=title,selftext,link_flair_text' #url format for pushlift
 
   #Validator for Web Crawler
   def __validate__(self):
@@ -75,7 +69,6 @@ class Crawler:
   #Process json output from pushlift to data
   def process_json(self,jsons):
     for json in jsons:
-      self.data['Author'].append(json['author'] if 'author' in json else None)
       self.data['Title'].append(json['title'] if 'title' in json else None)
       self.data['Text'].append(json['selftext'] if 'selftext' in json else None)
       self.data['Flair'].append(json['link_flair_text'] if 'link_flair_text' in json else None)
@@ -122,4 +115,4 @@ class Crawler:
       self.csv[key]=values
     self.csv.to_csv(pre+'raw_data.csv',index=False) #dump .csv
     with open(pre+'stats.pkl', 'wb') as f:
-        pickle.dump(self.stats, f) 
+        pickle.dump(self.stats, f)

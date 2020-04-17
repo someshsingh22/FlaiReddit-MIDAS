@@ -12,7 +12,7 @@ def home_view():
 def main():
 	if request.method=='POST':
 		text = request.files['upload_file'].read()
-		return model.classify(text)
+		return text+model.classify(text)
 	else:
 		return "GET"+ model.classify("POST")
 
