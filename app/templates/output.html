@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/mainpage.css') }}">
+    <title>Reddit Flair Classifier</title>
+</head>
+<body>
+<div class="container">  
+  <form id="contact" action="" method="post">
+    <h1>Reddit Flair Detector</h1><br>
+    <h4>The article has been predicted as :</h4>
+    <h2>{{flair}}</h3>
+  </form>
+</div>
+</body>
+</html>
