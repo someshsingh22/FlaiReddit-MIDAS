@@ -42,14 +42,29 @@ We set the seed for reproducibility and use BERT - *uncased, base*, freezing all
 * The app is created on flask, the root view is a simple webpage where you can enter the weblink and the predicted flair is displayed.
 * The other end point is \auto, to which a post request is sent and the prediction json is sent back.
 * Logs and Error pages will be enabled in a future update.
-Root page :
 * The colour theme used is taken from reddit's own theme :)
+
+ **Root page :**
 ```bash
 cd app
 python main.py
 ```
 ![Root page](Images/websnap.PNG)
 
-
-
-
+**Auto Endpoint**
+```python
+>>> import requests
+>>> with open('file.txt','wb') as f:
+		f.write(b"https://www.reddit.com/r/india/comments/g8fyzr/tejas_aircraft_aerodynamics_analysis_the_swedish/")
+#Science/Technology
+'''
+Using the method for post queries
+'''
+>>> files = {'upload_file': open('file.txt','rb')}
+>>>> r = requests.post(url, files=files)
+>>> r
+<Response [200]>
+>>> r.json()
+{"https://www.reddit.com/r/india/comments/g8fyzr/tejas_aircraft_aerodynamics_analysis_the_swedish/" : 'Science/Technology'}
+```
+## HEROKU DEPLOYMENT
