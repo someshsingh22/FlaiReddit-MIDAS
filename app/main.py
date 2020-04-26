@@ -4,7 +4,11 @@ import model
 
 app=Flask(__name__)
 
-@app.route('/',methods=['GET','POST'])
+@app.route("/") 
+def home_view(): 
+        return "<h1>Welcome to Geeks for FlaiReddit</h1>"
+
+@app.route('/classifier',methods=['GET','POST'])
 def main():
 	if request.method=='POST':
 		text = request.files['upload_file'].read()
