@@ -35,6 +35,6 @@ We set the seed for reproducibility and use BERT - *uncased, base*, freezing all
 | BERT | **0.60** | **0.59**  |	2.37 Samples
 | TFIDF , Feats | 0.49 | 0.48  | 273 Sample/s
 
-![Alternate image text](https://imgur.com/a/42Zr9JO.png)
+![Confusion Matrix](Images/CM.png)
 
 
