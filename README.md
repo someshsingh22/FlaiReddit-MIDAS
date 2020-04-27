@@ -37,4 +37,19 @@ We set the seed for reproducibility and use BERT - *uncased, base*, freezing all
 
 ![Confusion Matrix](Images/CM.png)
 
+## WebApp - Flask TFIDF
+* For the web app we have used the TFIDF model keeping the CPU Rate and Memory Usage in mind [BERT BASE has 114 M parameters].
+* The app is created on flask, the root view is a simple webpage where you can enter the weblink and the predicted flair is displayed.
+* The other end point is \auto, to which a post request is sent and the prediction json is sent back.
+* Logs and Error pages will be enabled in a future update.
+Root page :
+* The colour theme used is taken from reddit's own theme :)
+```bash
+cd app
+python main.py
+```
+![Root page](Images/websnap.png)
+
+
+
 
