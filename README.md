@@ -68,3 +68,9 @@ Using the method for post queries
 {"https://www.reddit.com/r/india/comments/g8fyzr/tejas_aircraft_aerodynamics_analysis_the_swedish/" : 'Science/Technology'}
 ```
 ## HEROKU DEPLOYMENT
+Finally the web application is deployed on Heroku and is available at [FlaiRedditTest](https://flaireddittest.herokuapp.com/), all Automation is available at [FlaiReddiTest/auto](https://flaireddittest.herokuapp.com/auto)
+> Here is a snapshot of a correct classification on android
+
+![Android Final View](Images/DroidView.jpeg)
+
+
