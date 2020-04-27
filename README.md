@@ -73,7 +73,9 @@ Finally the web application is deployed on Heroku and is available at [FlaiReddi
 > Here is a snapshot of a correct classification on android
 
  Similar to the local webapp you can access the Automated endpoint and root get view by just replacing http://127.0.0.1:5000/ with https://flaireddittest.herokuapp.com/
+
  **Final Android View**
+
 ![Android Final View](Images/DroidView.jpeg)
 
 
