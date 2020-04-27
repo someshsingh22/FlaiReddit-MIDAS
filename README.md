@@ -48,7 +48,7 @@ Root page :
 cd app
 python main.py
 ```
-![Root page](Images/websnap.png)
+![Root page](Images/websnap.PNG)
 
 
 
