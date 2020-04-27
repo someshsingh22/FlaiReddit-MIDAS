@@ -48,6 +48,7 @@ We set the seed for reproducibility and use BERT - *uncased, base*, freezing all
 ```bash
 cd app
 python main.py
+* Running on http://127.0.0.1:5000/
 ```
 ![Root page](Images/websnap.PNG)
 
@@ -71,6 +72,8 @@ Using the method for post queries
 Finally the web application is deployed on Heroku and is available at [FlaiRedditTest](https://flaireddittest.herokuapp.com/), all Automation is available at [FlaiReddiTest/auto](https://flaireddittest.herokuapp.com/auto)
 > Here is a snapshot of a correct classification on android
 
+ Similar to the local webapp you can access the Automated endpoint and root get view by just replacing http://127.0.0.1:5000/ with https://flaireddittest.herokuapp.com/
+ **Final Android View**
 ![Android Final View](Images/DroidView.jpeg)
 
 
