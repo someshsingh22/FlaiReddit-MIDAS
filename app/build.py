@@ -41,9 +41,9 @@ if __name__ == "__main__":
     DATA_PATH = "data.csv"
     df = pd.read_csv(open(DATA_PATH), encoding="utf-8").dropna()
 
-    #Clean
-    df['Title'] = df['Title'].apply(lambda x : clean(x))
-    df['Text'] = df['Text'].apply(lambda x : clean(x))
+    # Clean
+    df["Title"] = df["Title"].apply(lambda x: clean(x))
+    df["Text"] = df["Text"].apply(lambda x: clean(x))
 
     # UNDERSAMPLE
     train_df = sampler(df)
