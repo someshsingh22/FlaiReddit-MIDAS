@@ -5,6 +5,7 @@ import pickle
 from scipy import sparse  # Sparsed Vectorizers
 import scipy.stats as ss
 from scipy.sparse import hstack
+from tfidf_model import clean
 
 # Vectorizers
 from sklearn.feature_extraction.text import CountVectorizer as CV
@@ -40,6 +41,10 @@ if __name__ == "__main__":
     DATA_PATH = "data.csv"
     df = pd.read_csv(open(DATA_PATH), encoding="utf-8").dropna()
 
+    #Clean
+    df['Title'] = df['Title'].apply(lambda x : clean(x))
+    df['Text'] = df['Text'].apply(lambda x : clean(x))
+
     # UNDERSAMPLE
     train_df = sampler(df)
 
@@ -54,7 +59,7 @@ if __name__ == "__main__":
         max_features=6150,
     )
     cv.fit(df["Title"] + " " + df["Text"])
-    pickle.dump(model, open(VEC_PATH, "wb"))
+    pickle.dump(cv, open(VEC_PATH, "wb"))
 
     # Build Model
     model = MNB()
