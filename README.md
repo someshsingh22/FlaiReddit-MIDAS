@@ -56,17 +56,15 @@ python main.py
 ```python
 >>> import requests
 >>> with open('file.txt','wb') as f:
-		f.write(b"https://www.reddit.com/r/india/comments/g8fyzr/tejas_aircraft_aerodynamics_analysis_the_swedish/")
-#Science/Technology
-'''
-Using the method for post queries
-'''
+		f.write(b"r/india post urls")
+>>> base_url = "https://flaireddittest.herokuapp.com" #http://127.0.0.1:5000/ if local
+>>> url = f"{base_url}/auto"
 >>> files = {'upload_file': open('file.txt','rb')}
->>>> r = requests.post(url, files=files)
+>>> r = requests.post(url, files=files)
 >>> r
 <Response [200]>
 >>> r.json()
-{"https://www.reddit.com/r/india/comments/g8fyzr/tejas_aircraft_aerodynamics_analysis_the_swedish/" : 'Science/Technology'}
+{"post_url" : 'predicted tag'}
 ```
 ## HEROKU DEPLOYMENT
 Finally the web application is deployed on Heroku and is available at [FlaiRedditTest](https://flaireddittest.herokuapp.com/), all Automation is available at [FlaiReddiTest/auto](https://flaireddittest.herokuapp.com/auto)
