@@ -50,7 +50,7 @@ cd app
 python main.py
 * Running on http://127.0.0.1:5000/
 ```
-![Root page](Images/websnap.PNG)
+![Root page](Images/flaireddit_webapp.gif)
 
 **Auto Endpoint**
 ```python
